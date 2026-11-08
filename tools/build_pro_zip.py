@@ -25,8 +25,8 @@ def collect(base: Path) -> dict[str, Path]:
     out = {}
     for p in sorted(base.rglob("*")):
         rel = p.relative_to(base).as_posix()
-        if p.is_file() and "__pycache__" not in rel and not any(x.startswith(".") for x in rel.split("/")) \
-                and not rel.startswith("tests/"):
+        if p.is_file() and "__pycache__" not in rel and ".egg-info" not in rel \
+                and not any(x.startswith(".") for x in rel.split("/")) and not rel.startswith("tests/"):
             out[rel] = p
     return out
 
