@@ -2,10 +2,6 @@
   <img src="docs/assets/claude2antigravity-banner.svg" alt="Claude2Antigravity banner" width="760" />
 </p>
 
-<p align="center">
-  <img src="docs/assets/claude2antigravity-logo.svg" alt="Claude2Antigravity logo" width="128" />
-</p>
-
 <h1 align="center">Claude2Antigravity</h1>
 
 <p align="center">
