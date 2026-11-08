@@ -329,6 +329,30 @@ How it stays light:
 
 ## ⚠️ Troubleshooting & FAQ
 
+### Q: What happens when Claude hits its usage limit? *(Pro)*
+**A:** Pro notices Claude's "usage limit reached" message, writes a handoff brief (project, branch, git status, plan,
+todo list, last messages) to `~/.gemini/config/memory/claude2antigravity/HANDOFF.md` and shows a notification.
+In Antigravity, just say **"continue from the Claude handoff"**. In the Community edition, run `claude2agy sync` and
+say *"continue what I was doing in Claude"* - Antigravity reads the synced session files.
+
+### Q: Will it overwrite or delete my own Antigravity skills?
+**A:** No. It only updates or removes items it installed itself. Same-named items you made are left alone, and a
+synced copy you edited inside Antigravity is kept.
+
+### Q: Does it send my data anywhere?
+**A:** No. It makes no network calls. Everything is read and written on your own computer. Pro also hides e-mail
+addresses, API keys and tokens in synced conversation text.
+
+### Q: Does it slow down my computer? *(Pro live sync)*
+**A:** No. The background check takes under 1 ms per second and about 20-35 MB of memory, with no disk writes while
+nothing changes. A new skill appears in Antigravity about 1-2 seconds after you add it in Claude
+(see [Performance](#-performance)).
+
+### Q: What is the difference between the free version and Pro?
+**A:** The free Community edition (this repo) syncs when you run it by hand. [Pro](https://www.agensi.io/skills/claude2antigravity)
+syncs 24/7 by itself and adds notifications, auto-start, the usage-limit handoff, live context in every Antigravity
+request, Claude Desktop chats, search and the privacy filter.
+
 ### Q: Many items say "skipped (already in Antigravity, not managed)".
 **A:** Antigravity already has items with those names (installed by hand or by another tool). They are never
 overwritten without your OK. Run `claude2agy sync --adopt` once to let Claude2Antigravity manage them from now on.
