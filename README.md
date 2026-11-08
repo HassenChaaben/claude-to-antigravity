@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://m8ven.ai/mcp/hassenchaaben/claude-to-antigravity?s=readme"><img src="https://m8ven.ai/badge/mcp/hassenchaaben/claude-to-antigravity" alt="M8ven Score" /></a>
   <a href="https://github.com/HassenChaaben/claude-to-antigravity/releases"><img src="https://img.shields.io/badge/version-1.0.1-blue.svg" alt="Version 1.0.1" /></a>
   <a href="https://antigravity.google"><img src="https://img.shields.io/badge/Google%20Antigravity-Ready-4285F4?logo=google&logoColor=white" alt="Google Antigravity Ready" /></a>
   <a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/Claude%20Code-Ready-D97706?logo=anthropic&logoColor=white" alt="Claude Code Ready" /></a>
