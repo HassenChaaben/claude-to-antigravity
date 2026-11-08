@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A1A14"/>
+      <stop offset="0.48" stop-color="#16152A"/>
+      <stop offset="1" stop-color="#0B1838"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#E8875F"/>
+      <stop offset="0.5" stop-color="#B48CFF"/>
+      <stop offset="1" stop-color="#4C8DF6"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="0.28" cy="0.72" r="0.55">
+      <stop offset="0" stop-color="#E8875F" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#E8875F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="0.72" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#4C8DF6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#4C8DF6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="116" fill="url(#warm)"/>
+  <rect width="512" height="512" rx="116" fill="url(#cool)"/>
+
+  <!-- sync ring: two arrows chasing each other, warm (Claude) to cool (Antigravity) -->
+  <g fill="none" stroke="url(#ring)" stroke-width="22" stroke-linecap="round" filter="url(#glow)">
+    <path d="M118 300 A142 142 0 0 1 330 128"/>
+    <path d="M394 212 A142 142 0 0 1 182 384"/>
+  </g>
+  <path d="M358 144 L338 110 L320 146 Z" fill="#6E8DFC"/>
+  <path d="M154 368 L174 402 L192 366 Z" fill="#D48A8E"/>
+
+  <!-- Claude-style spark (lower left) -->
+  <g transform="translate(208 294) scale(0.82)" stroke="#F0936B" stroke-width="15" stroke-linecap="round" filter="url(#glow)">
+    <line x1="0" y1="-46" x2="0" y2="46"/>
+    <line x1="-46" y1="0" x2="46" y2="0"/>
+    <line x1="-33" y1="-33" x2="33" y2="33"/>
+    <line x1="-33" y1="33" x2="33" y2="-33"/>
+  </g>
+
+  <!-- Antigravity-style rising arch (upper right): an A lifting off, with lift lines -->
+  <g transform="translate(306 226) scale(0.86)" filter="url(#glow)">
+    <path d="M0 -62 L50 38 H27 L0 -18 L-27 38 H-50 Z" fill="#5B9BFF"/>
+    <g stroke="#9CC2FF" stroke-width="7" stroke-linecap="round" opacity="0.85">
+      <line x1="-30" y1="56" x2="-30" y2="74"/>
+      <line x1="0" y1="56" x2="0" y2="82"/>
+      <line x1="30" y1="56" x2="30" y2="74"/>
+    </g>
+  </g>
+</svg>
