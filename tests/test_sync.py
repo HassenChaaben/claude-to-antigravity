@@ -296,3 +296,13 @@ def test_wsl_homes_are_rechecked(env, monkeypatch):
     assert not homes.refresh_wsl()  # no change the second time
     monkeypatch.setattr(paths, "running_wsl_homes", lambda: [])
     assert homes.refresh_wsl() and homes.claude == [env.claude]
+
+
+def test_helper_programs_never_open_a_window():
+    """Every program the tool starts must pass the no-window flag on Windows (no console flash)."""
+    import re
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent / "skills" / "claude2antigravity" / "scripts" / "claude2antigravity"
+    for f in root.rglob("*.py"):
+        for m in re.finditer(r"subprocess\.run\((.*?)\)\n", f.read_text(encoding="utf-8"), re.S):
+            assert "NO_WINDOW" in m.group(1), f"{f.name}: subprocess.run without NO_WINDOW"

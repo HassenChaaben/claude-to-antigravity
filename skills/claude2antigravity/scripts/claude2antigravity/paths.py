@@ -11,7 +11,7 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .util import log
+from .util import NO_WINDOW, log
 
 APP_DIR_NAME = ".claude2antigravity"
 
@@ -76,7 +76,8 @@ def running_wsl_homes() -> list[Path]:
     if sys.platform != "win32":
         return []
     try:
-        out = subprocess.run(["wsl.exe", "-l", "--running", "-q"], capture_output=True, timeout=3, check=False)
+        out = subprocess.run(["wsl.exe", "-l", "--running", "-q"], capture_output=True, timeout=3, check=False,
+                             **NO_WINDOW)
     except (OSError, subprocess.TimeoutExpired):
         return []
     text = out.stdout.decode("utf-16-le", errors="ignore").replace("\x00", "")

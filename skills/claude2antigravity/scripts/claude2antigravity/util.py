@@ -14,6 +14,10 @@ from typing import Any
 
 log = logging.getLogger("claude2antigravity")
 
+# Windows: start helper programs (wsl.exe, git, schtasks) without a console window. Without this flag a
+# background process with no console makes Windows open one for a split second (a visible flash).
+NO_WINDOW = {"creationflags": 0x08000000} if os.name == "nt" else {}
+
 SKIP_DIRS = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
 
 
