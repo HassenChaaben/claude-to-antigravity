@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="909" height="336" viewBox="0 0 909 336">
+<rect width="100%" height="100%" rx="12" fill="#0D1117"/>
+<rect width="100%" height="34" rx="12" fill="#161B22"/><rect y="22" width="100%" height="12" fill="#161B22"/>
+<circle cx="20" cy="17" r="6" fill="#FF5F57"/><circle cx="40" cy="17" r="6" fill="#FEBC2E"/><circle cx="60" cy="17" r="6" fill="#28C840"/>
+<text x="454" y="22" text-anchor="middle" fill="#8B949E" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">claude2agy doctor</text>
+<g font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13.5">
+<text x="24" y="66" fill="#A78BFA" xml:space="preserve">$ claude2agy doctor</text>
+<text x="24" y="86" fill="#4ADE80" xml:space="preserve">  OK   Python 3.12.3 (3.10+ needed)</text>
+<text x="24" y="106" fill="#4ADE80" xml:space="preserve">  OK   Claude Code folder: C:\Users\user\.claude</text>
+<text x="24" y="126" fill="#4ADE80" xml:space="preserve">  OK   Claude Desktop data: C:\Users\user\AppData\Roaming\Claude</text>
+<text x="24" y="146" fill="#4ADE80" xml:space="preserve">  OK   Antigravity config: C:\Users\user\.gemini\config</text>
+<text x="24" y="166" fill="#4ADE80" xml:space="preserve">  OK   State folder writable: C:\Users\user\.claude2antigravity</text>
+<text x="24" y="186" fill="#4ADE80" xml:space="preserve">  OK   GEMINI.md has the Claude context block (run sync if not)</text>
+<text x="24" y="206" fill="#4ADE80" xml:space="preserve">  OK   Edition: Pro</text>
+<text x="24" y="226" fill="#4ADE80" xml:space="preserve">  OK   Live sync: running (pid 9832, since 2026-11-08T01:18:05, 17 syncs, last change applied in 1.265 s)</text>
+<text x="24" y="246" fill="#4ADE80" xml:space="preserve">  OK   Auto-start registered</text>
+<text x="24" y="266" fill="#4ADE80" xml:space="preserve">  OK   Antigravity context hook registered</text>
+<text x="24" y="286" fill="#4ADE80" xml:space="preserve">  OK   Search index: FTS5</text>
+<text x="24" y="306" fill="#4ADE80" xml:space="preserve">All good.</text>
+</g></svg>

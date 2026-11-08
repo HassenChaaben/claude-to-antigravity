@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1016" height="216" viewBox="0 0 1016 216">
+<rect width="100%" height="100%" rx="12" fill="#0D1117"/>
+<rect width="100%" height="34" rx="12" fill="#161B22"/><rect y="22" width="100%" height="12" fill="#161B22"/>
+<circle cx="20" cy="17" r="6" fill="#FF5F57"/><circle cx="40" cy="17" r="6" fill="#FEBC2E"/><circle cx="60" cy="17" r="6" fill="#28C840"/>
+<text x="508" y="22" text-anchor="middle" fill="#8B949E" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">claude2agy status</text>
+<g font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13.5">
+<text x="24" y="66" fill="#A78BFA" xml:space="preserve">$ claude2agy status</text>
+<text x="24" y="86" fill="#D1D5DB" xml:space="preserve">Claude2Antigravity 1.0.0 (Pro edition)</text>
+<text x="24" y="106" fill="#D1D5DB" xml:space="preserve">  Claude homes      : C:\Users\user\.claude</text>
+<text x="24" y="126" fill="#D1D5DB" xml:space="preserve">  Antigravity       : C:\Users\user\.gemini\config</text>
+<text x="24" y="146" fill="#D1D5DB" xml:space="preserve">  Managed items     : 140 skills, 31 plugins, 1 agents, 0 MCP servers</text>
+<text x="24" y="166" fill="#D1D5DB" xml:space="preserve">  Last sync         : 2026-11-08T01:21:58  changed: 0 added, 0 updated, 0 removed, 0 skipped · 2 conversations · 0.21s</text>
+<text x="24" y="186" fill="#D1D5DB" xml:space="preserve">  Live sync         : running (pid 9832, since 2026-11-08T01:18:05, 17 syncs, last change applied in 1.265 s)</text>
+</g></svg>

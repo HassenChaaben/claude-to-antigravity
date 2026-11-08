@@ -1,0 +1,141 @@
+{
+  "machine": "Windows 11 laptop, Python 3.12, other apps running",
+  "setup": "200 skills, 50 plugins (150 bundled skills), 30 agents, 1,000 conversations",
+  "results": {
+    "first_full_sync_s": {
+      "min": 11.31,
+      "max": 16.85,
+      "runs": [
+        16.85,
+        11.31,
+        14.69
+      ]
+    },
+    "items_synced": {
+      "min": 430,
+      "max": 430,
+      "runs": [
+        430,
+        430,
+        430
+      ]
+    },
+    "conversations": {
+      "min": 200,
+      "max": 200,
+      "runs": [
+        200,
+        200,
+        200
+      ]
+    },
+    "idle_deep_sync_s": {
+      "min": 0.498,
+      "max": 0.844,
+      "runs": [
+        0.844,
+        0.498,
+        0.505
+      ]
+    },
+    "idle_fast_sync_s": {
+      "min": 0.39,
+      "max": 0.632,
+      "runs": [
+        0.52,
+        0.632,
+        0.39
+      ]
+    },
+    "idle_config_only_fast_s": {
+      "min": 0.238,
+      "max": 0.432,
+      "runs": [
+        0.389,
+        0.432,
+        0.238
+      ]
+    },
+    "idle_check_ms": {
+      "min": 0.16,
+      "max": 0.34,
+      "runs": [
+        0.25,
+        0.34,
+        0.16
+      ]
+    },
+    "five_second_check_ms": {
+      "min": 48.6,
+      "max": 66.7,
+      "runs": [
+        66.7,
+        59.0,
+        48.6
+      ]
+    },
+    "idle_cpu_percent": {
+      "min": 1.2,
+      "max": 1.67,
+      "runs": [
+        1.67,
+        1.2,
+        1.67
+      ]
+    },
+    "idle_ram_mb": {
+      "min": 33.4,
+      "max": 33.8,
+      "runs": [
+        33.8,
+        33.4,
+        33.5
+      ]
+    },
+    "idle_files_written_30s": {
+      "min": 0,
+      "max": 0,
+      "runs": [
+        0,
+        0,
+        0
+      ]
+    },
+    "live_latency_median_s": {
+      "min": 1.21,
+      "max": 1.35,
+      "runs": [
+        1.21,
+        1.25,
+        1.35
+      ]
+    },
+    "live_latency_p95_s": {
+      "min": 2.04,
+      "max": 2.41,
+      "runs": [
+        2.04,
+        2.05,
+        2.41
+      ]
+    },
+    "live_latency_max_s": {
+      "min": 2.04,
+      "max": 2.41,
+      "runs": [
+        2.04,
+        2.05,
+        2.41
+      ]
+    },
+    "conversation_latency_s": {
+      "min": 1.42,
+      "max": 2.69,
+      "runs": [
+        2.69,
+        1.42,
+        2.38
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude2antigravity"
+version = "1.0.0"
+description = "Bring your Claude Code skills, plugins, agents, MCP servers and conversations into Google Antigravity."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hassen Ben Chaaben", email = "hassen.benchaaben01@gmail.com" }]
+keywords = ["claude-code", "antigravity", "gemini", "skills", "plugins", "mcp", "sync", "agents"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Software Development",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pylint>=3", "build"]
+
+[project.urls]
+Homepage = "https://github.com/HassenChaaben/claude-to-antigravity"
+Issues = "https://github.com/HassenChaaben/claude-to-antigravity/issues"
+"Pro edition (Agensi)" = "https://www.agensi.io/skills/claude2antigravity"
+
+[project.scripts]
+claude2agy = "claude2antigravity.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "skills/claude2antigravity/scripts" }
+
+[tool.setuptools.packages.find]
+where = ["skills/claude2antigravity/scripts"]
+include = ["claude2antigravity*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

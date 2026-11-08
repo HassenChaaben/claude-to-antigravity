@@ -1,0 +1,21 @@
+name: pylint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pylint
+      - run: pylint --errors-only --disable=import-error,no-name-in-module skills/claude2antigravity/scripts/claude2antigravity install.py tools

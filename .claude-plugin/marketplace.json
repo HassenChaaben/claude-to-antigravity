@@ -1,0 +1,15 @@
+{
+  "name": "claude2antigravity",
+  "metadata": { "description": "Claude2Antigravity - your Claude skills, plugins, agents and conversations, inside Google Antigravity." },
+  "owner": { "name": "Hassen Ben Chaaben", "url": "https://github.com/HassenChaaben" },
+  "plugins": [
+    {
+      "name": "claude2antigravity",
+      "description": "Bring your Claude Code skills, plugins, agents, MCP servers and conversations into Google Antigravity, so you can keep working when Claude hits its usage limit.",
+      "author": { "name": "Hassen Ben Chaaben" },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/HassenChaaben/claude-to-antigravity"
+    }
+  ]
+}
