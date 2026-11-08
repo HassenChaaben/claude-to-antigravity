@@ -185,6 +185,12 @@ python install.py --sync             # run the first sync right away
 
 Windows: `.\install.ps1` · macOS/Linux: `./install.sh` (same options).
 
+**Or with Docker** (image on [GitHub Packages](https://github.com/HassenChaaben/claude-to-antigravity/pkgs/container/claude2antigravity)):
+
+```bash
+docker run --rm -v ~/.claude:/root/.claude -v ~/.claude.json:/root/.claude.json   -v ~/.gemini:/root/.gemini -v ~/.claude2antigravity:/root/.claude2antigravity   ghcr.io/hassenchaaben/claude2antigravity sync --dry-run
+```
+
 <details>
 <summary><b>🔧 Commands</b></summary>
 
