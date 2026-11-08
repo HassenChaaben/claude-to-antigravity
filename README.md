@@ -2,7 +2,11 @@
   <img src="docs/assets/claude2antigravity-banner.svg" alt="Claude2Antigravity banner" width="760" />
 </p>
 
-<h1 align="center">🔁 Claude2Antigravity</h1>
+<p align="center">
+  <img src="docs/assets/claude2antigravity-logo.svg" alt="Claude2Antigravity logo" width="128" />
+</p>
+
+<h1 align="center">Claude2Antigravity</h1>
 
 <p align="center">
   <b>Your Claude Code skills, plugins, agents, MCP servers and conversations - inside Google Antigravity.</b><br/>
@@ -10,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/HassenChaaben/claude-to-antigravity/releases"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version 1.0.0" /></a>
+  <a href="https://github.com/HassenChaaben/claude-to-antigravity/releases"><img src="https://img.shields.io/badge/version-1.0.1-blue.svg" alt="Version 1.0.1" /></a>
   <a href="https://antigravity.google"><img src="https://img.shields.io/badge/Google%20Antigravity-Ready-4285F4?logo=google&logoColor=white" alt="Google Antigravity Ready" /></a>
   <a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/Claude%20Code-Ready-D97706?logo=anthropic&logoColor=white" alt="Claude Code Ready" /></a>
   <a href="https://www.agensi.io/skills/claude2antigravity"><img src="https://img.shields.io/badge/Agensi%20Store-Pro%20($3.99)-6366F1?logo=sparkles&logoColor=white" alt="Get Pro on Agensi" /></a>

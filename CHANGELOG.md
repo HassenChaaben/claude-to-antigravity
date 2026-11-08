@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-11-08
+
+### Added
+- **Docker image** on GitHub Packages: `ghcr.io/hassenchaaben/claude2antigravity`, published automatically on each release (with an optional PyPI upload).
+- **App logo** (`docs/assets/claude2antigravity-logo.svg`) and a matching banner.
+
 ## [1.0.0] - 2026-11-08
 
 ### Added

@@ -1,6 +1,6 @@
 {
   "name": "claude2antigravity",
   "displayName": "Claude2Antigravity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bring your Claude Code skills, plugins, agents, MCP servers and conversations into Google Antigravity, so you can keep working when Claude hits its usage limit."
 }
