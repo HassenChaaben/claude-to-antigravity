@@ -15,7 +15,7 @@ from pathlib import Path
 from . import conversations, convert, memory
 from .paths import Homes
 from .sources import Item, find_agents, find_mcp_servers, find_plugins, find_skills
-from .util import (content_signature, log, read_json, remove_path, replace_tree, shallow_signature, tree_signature,
+from .util import (BrokenConfig, content_signature, read_config, log, read_json, remove_path, replace_tree, shallow_signature, tree_signature,
                    write_json_if_changed)
 
 STATE_VERSION = 1
@@ -155,8 +155,15 @@ def sync_mcp(homes: Homes, state: State, dry_run: bool) -> list[Action]:
     """Add Claude's user-level MCP servers. A same-named server already in Antigravity is never overwritten,
     even with --adopt, because Antigravity entries are often tuned by hand (timeouts, full paths)."""
     cfg_path = homes.agy / "mcp_config.json"
-    cfg = read_json(cfg_path, {}) or {}
-    servers = cfg.setdefault("mcpServers", {}) if isinstance(cfg, dict) else {}
+    try:
+        cfg = read_config(cfg_path)
+    except BrokenConfig as exc:
+        log.warning("MCP servers not synced: %s", exc)
+        return [Action("skip", "mcp", "mcp_config.json", "file is not valid JSON - left unchanged")]
+    servers = cfg.setdefault("mcpServers", {})
+    if not isinstance(servers, dict):
+        log.warning("MCP servers not synced: mcpServers in %s is not an object", cfg_path)
+        return []
     actions: list[Action] = []
     wanted = {name: convert.mcp_server(c) for name, c in find_mcp_servers(homes).items()}
     for name, conv in wanted.items():
@@ -260,7 +267,11 @@ def uninstall(homes: Homes) -> int:
         apply_remove(homes, state, a)
         removed += a.op == "remove"
     cfg_path = homes.agy / "mcp_config.json"
-    cfg = read_json(cfg_path, {}) or {}
+    try:
+        cfg = read_config(cfg_path)
+    except BrokenConfig as exc:
+        log.warning("%s", exc)
+        cfg = {}
     for name in list(state.mcp):
         cfg.get("mcpServers", {}).pop(name, None)
         state.mcp.pop(name)

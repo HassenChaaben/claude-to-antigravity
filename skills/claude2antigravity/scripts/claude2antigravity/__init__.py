@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import importlib.util
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 PRO_URL = "https://www.agensi.io/skills/claude2antigravity"
 
 

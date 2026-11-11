@@ -6,7 +6,7 @@ import os
 import sys
 from pathlib import Path
 
-from .util import log, parse_frontmatter, read_json, render_frontmatter, write_json_if_changed
+from .util import BrokenConfig, log, read_config, parse_frontmatter, read_json, render_frontmatter, write_json_if_changed
 
 PLUGIN_ROOT_TOKENS = ("${CLAUDE_PLUGIN_ROOT}", "$CLAUDE_PLUGIN_ROOT")
 
@@ -76,9 +76,10 @@ def convert_agent(src: Path, dst: Path) -> None:
 
 def set_plugin_enabled(config_json: Path, name: str, enabled: bool | None) -> None:
     """enabled=True/False sets the flag; None removes our entry. Every other setting is kept as is."""
-    data = read_json(config_json, {}) or {}
-    if not isinstance(data, dict):
-        log.warning("%s is not a JSON object; plugin %s not registered", config_json, name)
+    try:
+        data = read_config(config_json)
+    except BrokenConfig as exc:
+        log.warning("plugin %s not enabled: %s", name, exc)
         return
     plugins = data.setdefault("plugins", {})
     if not isinstance(plugins, dict):

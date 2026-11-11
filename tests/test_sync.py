@@ -306,3 +306,28 @@ def test_helper_programs_never_open_a_window():
     for f in root.rglob("*.py"):
         for m in re.finditer(r"subprocess\.run\((.*?)\)\n", f.read_text(encoding="utf-8"), re.S):
             assert "NO_WINDOW" in m.group(1), f"{f.name}: subprocess.run without NO_WINDOW"
+
+
+def test_empty_antigravity_config_files_are_handled_quietly(env, caplog):
+    """A fresh Antigravity install can have 0-byte mcp_config.json / config.json: treat them as empty."""
+    write(env.agy / "mcp_config.json", "")
+    write(env.agy / "config.json", "")
+    write(env.home / ".claude.json", json.dumps({"mcpServers": {"flow": {"type": "stdio", "command": "node"}}}))
+    p = env.plugin("kit", "1.0.0")
+    env.register_plugins({"kit@mkt": p})
+    run(env)
+    assert json.loads((env.agy / "mcp_config.json").read_text())["mcpServers"]["flow"]["command"] == "node"
+    assert json.loads((env.agy / "config.json").read_text())["plugins"]["kit"] == {"enabled": True}
+    assert "Expecting value" not in caplog.text
+
+
+def test_broken_antigravity_config_is_never_overwritten(env):
+    bad = '{"mcpServers": {"mine": {"command": "x"}},  // my notes\n}'
+    write(env.agy / "mcp_config.json", bad)
+    write(env.agy / "config.json", bad)
+    write(env.home / ".claude.json", json.dumps({"mcpServers": {"flow": {"type": "stdio", "command": "node"}}}))
+    p = env.plugin("kit", "1.0.0")
+    env.register_plugins({"kit@mkt": p})
+    run(env)
+    assert (env.agy / "mcp_config.json").read_text() == bad
+    assert (env.agy / "config.json").read_text() == bad

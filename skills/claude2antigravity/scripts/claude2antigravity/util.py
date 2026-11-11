@@ -53,6 +53,31 @@ def read_json(path: Path, default: Any = None) -> Any:
         return default
 
 
+class BrokenConfig(Exception):
+    """A user config file exists but is not valid JSON: it must be left untouched."""
+
+
+def read_config(path: Path) -> dict:
+    """Read a JSON config file that we may rewrite (Antigravity's mcp_config.json, config.json, hooks.json).
+
+    Missing or empty file -> {} (safe to create). Valid JSON object -> that object.
+    Anything else -> BrokenConfig, so the caller never overwrites a file the user may have hand-edited.
+    """
+    try:
+        text = path.read_text(encoding="utf-8-sig")
+    except FileNotFoundError:
+        return {}
+    if not text.strip():
+        return {}
+    try:
+        data = json.loads(text)
+    except ValueError as exc:
+        raise BrokenConfig(f"{path} is not valid JSON ({exc}); left unchanged - fix or empty it, then sync again")
+    if not isinstance(data, dict):
+        raise BrokenConfig(f"{path} is not a JSON object; left unchanged")
+    return data
+
+
 def write_text_if_changed(path: Path, text: str) -> bool:
     """Atomic write that is skipped when the content is identical (no needless disk writes)."""
     try:

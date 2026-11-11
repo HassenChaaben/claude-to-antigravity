@@ -1,7 +1,7 @@
 ---
 name: claude2antigravity
 description: Bring everything from Claude Code into Google Antigravity - skills, plugins (converted), agents, MCP servers and Claude Code conversations - so you can keep working in Antigravity when Claude hits its usage limit. Use when the user wants to move, copy, sync or import Claude skills/plugins/agents/conversations into Antigravity (or Gemini / agy-cli), asks Antigravity to "continue what I did in Claude", mentions hitting Claude's usage limit and switching tools, or asks why a Claude skill is missing in Antigravity.
-version: 1.0.1
+version: 1.0.2
 declared-hosts:
   - www.agensi.io       # link to the Pro edition in messages only; no network calls are made
 env-vars: []

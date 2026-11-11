@@ -4,6 +4,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-11-11
+
+### Fixed
+- An empty `mcp_config.json`, `config.json` or `hooks.json` in Antigravity (common on a fresh install) no longer prints "Expecting value: line 1 column 1"; it is treated as empty.
+- A config file that is not valid JSON (for example with hand-written comments) is now **never overwritten**; the tool says which file to fix and skips only that step.
+- Windows: helper programs start without a console window (no flash).
+
 ## [1.0.1] - 2026-11-08
 
 ### Added

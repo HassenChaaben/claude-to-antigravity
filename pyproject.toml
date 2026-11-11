@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "claude2antigravity"
-version = "1.0.1"
+version = "1.0.2"
 description = "Bring your Claude Code skills, plugins, agents, MCP servers and conversations into Google Antigravity."
 readme = "README.md"
 requires-python = ">=3.10"
